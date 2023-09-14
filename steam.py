@@ -111,7 +111,7 @@ df_players = df[df['Squad'] == 'Manchester Utd']\n
 df_players.sort_values(by='Gls', ascending=False, inplace=True)\n
 print(df_players.head(1).to_html(index=False))\n
 
-Q: {}\n '''
+Q: '''
 openai_api_key = st.sidebar.text_input('OpenAI API Key')
 
 def generate_response(input_text):
