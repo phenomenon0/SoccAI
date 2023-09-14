@@ -142,6 +142,6 @@ finally:
     sys.stdout = old_stdout
 
 
-st.info(output)
-components.html(output, width=200, height=200)
+st.dataframe(output)
+
     
