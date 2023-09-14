@@ -137,6 +137,6 @@ finally:
     sys.stdout = old_stdout
 
 
-st.table(output)
+st.info(output)
 
     
