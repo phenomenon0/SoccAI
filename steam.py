@@ -127,6 +127,7 @@ import io
 import sys
 old_stdout = sys.stdout
 sys.stdout = buffer = io.StringIO()
+
         
 try:
     exec(query, globals())
@@ -136,7 +137,11 @@ except Exception as e:
 finally:
     sys.stdout = old_stdout
 
+def generate_table(x):
+  llm = OpenAI(temperature=0.3, openai_api_key=openai_api_key)
+  return (llm('write this in markdown ' + x))
 
+output = generate_table(output)
 st.info(output)
 
     
