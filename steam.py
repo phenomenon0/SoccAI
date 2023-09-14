@@ -1,11 +1,6 @@
 import streamlit as st
 from langchain.llms import OpenAI
 import pandas as pd
-import streamlit.components.v1 as components 
-
-# Render the h1 block, contained in a frame of size 200x200.
-
-
 
 
 st.title('⚽️ Soccer Genie')
@@ -125,7 +120,7 @@ with st.form('my_form'):
   if not openai_api_key.startswith('sk-'):
     st.warning('Please enter your OpenAI API key!', icon='⚠')
   if submitted and openai_api_key.startswith('sk-'):
-    query  = generate_response(text)
+    query  = generate_response(prompt+text.strip())
 
 
 import io
