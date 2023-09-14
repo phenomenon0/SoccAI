@@ -1,7 +1,7 @@
 import streamlit as st
 from langchain.llms import OpenAI
 import pandas as pd
-import streamlit.components.v1 as components  # Import Streamlit
+import streamlit.components.v1 as components 
 
 # Render the h1 block, contained in a frame of size 200x200.
 
@@ -142,6 +142,6 @@ finally:
     sys.stdout = old_stdout
 
 
-    
-components.html(output)
+st.info(output)
+components.html(output, width=200, height=200)
     
