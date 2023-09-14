@@ -19,7 +19,7 @@ with st.form('my_form'):
   if submitted and openai_api_key.startswith('sk-'):
     query  = generate_response(text)
 
-exec(query)
+
 import io
 import sys
 old_stdout = sys.stdout
