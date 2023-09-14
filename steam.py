@@ -1,6 +1,11 @@
 import streamlit as st
 from langchain.llms import OpenAI
 import pandas as pd
+import streamlit.components.v1 as components  # Import Streamlit
+
+# Render the h1 block, contained in a frame of size 200x200.
+
+
 
 
 st.title('⚽️ Soccer Genie')
@@ -138,3 +143,5 @@ finally:
 
 
     st.info(output)
+    components.html(output)
+    
