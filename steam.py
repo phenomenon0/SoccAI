@@ -142,6 +142,6 @@ finally:
     sys.stdout = old_stdout
 
 
-    st.info(output)
-    components.html(output)
+    
+components.html(output)
     
