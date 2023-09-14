@@ -127,3 +127,7 @@ websocket-client==1.6.2
 wsproto==1.2.0
 yarl==1.9.2
 zope.interface==6.0
+streamlit
+openai
+llama-index
+nltk
