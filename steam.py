@@ -138,6 +138,6 @@ finally:
     sys.stdout = old_stdout
 
 
-st.dataframe(a)
+st.info(a)
 
     
