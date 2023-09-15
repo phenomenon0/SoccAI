@@ -69,6 +69,9 @@ Cmp% -- Pass Completion %
 TotDist -- Total Passing Distance
 PPA -- Passes into Penalty Area
 
+below are examples of questions, when generting the answer limit the columns to
+relatively valuable ones for the relating question.
+like number of appearances clubs age and as needed 
 
 
 Q: Top 5 most goals scored by a defender under 21?\n"
@@ -87,7 +90,7 @@ Q: Top 5 passes into the final third by a midfielder over 30 ?\n
 df_midfielders_over_30 = df[(df['Pos'].str.contains('MF')) & (df['Age'] > 30)]\n
 df_midfielders_over_30 = df_midfielders_over_30[['Player', 'Squad', 'Pos', 'Age', '1/3', 'MP']]\n
 df_midfielders_over_30.sort_values(by='1/3', ascending=False, inplace=True)\n
-print(df_midfielders_over_30.head(5).T.reset_index().values.T.tolist())
+print(df_midfielders_over_30.head(5).T.sreset_index().values.T.tolist())
 
 Q: Who is the oldest player with an assist\n
 df_assist = df[df['Ast'] > 0]\n
