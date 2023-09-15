@@ -140,5 +140,5 @@ except Exception as e:
 finally:
     sys.stdout = old_stdout
 
-st.write(output.strip('][').split(', '))
+st.write(output)
 
