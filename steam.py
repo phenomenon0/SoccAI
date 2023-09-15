@@ -140,5 +140,5 @@ except Exception as e:
 finally:
     sys.stdout = old_stdout
 
-last = pd.DataFrame(output.strip('][').split(', '))
-st.write(last) 
+st.write(output.strip('][').split(', '))
+
