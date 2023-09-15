@@ -75,36 +75,36 @@ Q: Top 5 most goals scored by a defender under 21?\n"
 df_defenders_under_21 = df[(df['Pos'].str.contains('DF')) & (df['Age'] < 21)]\n
 df_defenders_under_21 = df_defenders_under_21[['Player', 'Squad', 'Pos', 'Age', 'Gls', 'MP']]\n
 df_defenders_under_21.sort_values(by='Gls', ascending=False, inplace=True)\n
- df_defenders_under_21.head(5)
+print(df_defenders_under_21.head(5).values.tolist())
 
 Q: Top 5 most goals scored by an English midfielder under 21 ?\n
 df_midfielders_under_21 = df[(df['Pos'].str.contains('MF')) & (df['Age'] < 21) & (df['Nation'] == 'ENG')]\n
 df_midfielders_under_21 = df_midfielders_under_21[['Player', 'Squad', 'Pos', 'Age', 'Gls', 'MP']]\n
 df_midfielders_under_21.sort_values(by='Gls', ascending=False, inplace=True)\n
- df_midfielders_under_21.head(5)
+print(df_midfielders_under_21.head(5).values.tolist())
 
 Q: Top 5 passes into the final third by a midfielder over 30 ?\n
 df_midfielders_over_30 = df[(df['Pos'].str.contains('MF')) & (df['Age'] > 30)]\n
 df_midfielders_over_30 = df_midfielders_over_30[['Player', 'Squad', 'Pos', 'Age', '1/3', 'MP']]\n
 df_midfielders_over_30.sort_values(by='1/3', ascending=False, inplace=True)\n
- df_midfielders_over_30.head(5)
+print(df_midfielders_over_30.head(5).values.tolist())
 
 Q: Who is the oldest player with an assist\n
 df_assist = df[df['Ast'] > 0]\n
 df_assist = df_assist[['Player', 'Squad', 'Pos', 'Age', 'Ast', 'MP']]\n
 df_assist.sort_values(by='Age', ascending=False, inplace=True)\n
-df_assist.head(1)
+print(df_assist.head(1).values.tolist())
 
 Q: Who is the top assister amongst these 3 teams, Brighton, Brentford, and Crystal Palace\n
 df_teams = df[(df['Squad'] == 'Brighton') | (df['Squad'] == 'Brentford') | (df['Squad'] == 'Crystal Palace')]\n
 df_teams = df_teams[['Player', 'Squad', 'Pos', 'Age', 'Ast', 'MP']]\n
 df_teams.sort_values(by='Ast', ascending=False, inplace=True)\n
-df_teams.head(1)
+print(df_teams.head(1).values.tolist())
 
 Q: players with most goals from manchester united\n
 df_players = df[df['Squad'] == 'Manchester Utd']\n
 df_players.sort_values(by='Gls', ascending=False, inplace=True)\n
-df_players.head(1)
+print(df_players.head(1).values.tolist())
 
 Q: '''
 openai_api_key = st.sidebar.text_input('OpenAI API Key')
@@ -137,7 +137,6 @@ except Exception as e:
 finally:
     sys.stdout = old_stdout
 
-
-st.write(output)
+st.dataframe(output)
 
     
