@@ -137,7 +137,4 @@ except Exception as e:
 finally:
     sys.stdout = old_stdout
     
-df_last = pd.DataFrame(list(output)[1:],columns=list(output)[0])
-st.dataframe(df_last)
-
-    
+output 
