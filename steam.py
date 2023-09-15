@@ -136,7 +136,7 @@ except Exception as e:
     output = str(e)
 finally:
     sys.stdout = old_stdout
-s= pd.DataFrame(output)
-st.write(s)
+
+st.dataframe(output)
 
     
