@@ -140,7 +140,27 @@ except Exception as e:
     output = str(e)
 finally:
     sys.stdout = old_stdout
+import pandas as pd
 
-st.write(output)
+def string_to_dataframe(data_string):
+    # Split the input string into a list of lists
+    data_list = eval(data_string)
+
+    # Extract the headers from the first list
+    headers = data_list[0]
+
+    # Extract the data from the remaining lists
+    data = data_list[1:]
+
+    # Create a Pandas DataFrame
+    df = pd.DataFrame(data, columns=headers)
+
+    return df
+
+
+df = string_to_dataframe(output)
+
+
+st.write(df)
 
 
