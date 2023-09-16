@@ -141,6 +141,6 @@ except Exception as e:
 finally:
     sys.stdout = old_stdout
 
-st.write(type(output))
+st.write(output)
 
 
