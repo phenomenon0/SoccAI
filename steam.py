@@ -1,7 +1,7 @@
 import streamlit as st
 from langchain.llms import OpenAI
 import pandas as pd
-from ast import literal_eval
+
 
 
 st.title('⚽️ Soccer Genie')
@@ -141,8 +141,6 @@ except Exception as e:
 finally:
     sys.stdout = old_stdout
 
-lst = literal_eval(output)
-dataframe_it = pd.DataFrame(lst)
+st.write(type(output))
 
-st.write(dataframe_it)
 
