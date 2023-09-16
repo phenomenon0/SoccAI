@@ -1,6 +1,7 @@
 import streamlit as st
 from langchain.llms import OpenAI
 import pandas as pd
+import json 
 
 
 st.title('⚽️ Soccer Genie')
@@ -140,5 +141,8 @@ except Exception as e:
 finally:
     sys.stdout = old_stdout
 
-st.write(output[1:-1])
+lst = json.loads(output)
+dataframe_it = pd.DataFrame(lst)
+
+st.write(dataframe_it)
 
