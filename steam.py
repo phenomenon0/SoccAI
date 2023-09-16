@@ -141,7 +141,7 @@ except Exception as e:
 finally:
     sys.stdout = old_stdout
 
-lst = json.loads(output)
+lst = json.loads('['+output)
 dataframe_it = pd.DataFrame(lst)
 
 st.write(dataframe_it)
