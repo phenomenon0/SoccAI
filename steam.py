@@ -144,13 +144,6 @@ import pandas as pd
 
 
 
-
-#read a json object usinng split orient
-def json_to_df(json):
-  df = pd.read_json(json, orient='split')
-  return df
-
-final = json_to_df(output)
-st.write(final)
+st.write(output)
 
 
