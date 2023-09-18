@@ -79,36 +79,36 @@ Q: Top 5 most goals scored by a defender under 21?\n"
 df_defenders_under_21 = df[(df['Pos'].str.contains('DF')) & (df['Age'] < 21)]\n
 df_defenders_under_21 = df_defenders_under_21[['Player', 'Squad', 'Pos', 'Age', 'Gls', 'MP']]\n
 df_defenders_under_21.sort_values(by='Gls', ascending=False, inplace=True)\n
-print(df_defenders_under_21.head(5).T.reset_index().values.T.tolist())
+print(df_defenders_under_21.head(5).to_json(orient='records'))
 
 Q: Top 5 most goals scored by an English midfielder under 21 ?\n
 df_midfielders_under_21 = df[(df['Pos'].str.contains('MF')) & (df['Age'] < 21) & (df['Nation'] == 'ENG')]\n
 df_midfielders_under_21 = df_midfielders_under_21[['Player', 'Squad', 'Pos', 'Age', 'Gls', 'MP']]\n
 df_midfielders_under_21.sort_values(by='Gls', ascending=False, inplace=True)\n
-print(df_midfielders_under_21.head(5).T.reset_index().values.T.tolist())
+print(df_midfielders_under_21.head(5).to_json(orient='records'))
 
 Q: Top 5 passes into the final third by a midfielder over 30 ?\n
 df_midfielders_over_30 = df[(df['Pos'].str.contains('MF')) & (df['Age'] > 30)]\n
 df_midfielders_over_30 = df_midfielders_over_30[['Player', 'Squad', 'Pos', 'Age', '1/3', 'MP']]\n
 df_midfielders_over_30.sort_values(by='1/3', ascending=False, inplace=True)\n
-print(df_midfielders_over_30.head(5).T.sreset_index().values.T.tolist())
+print(df_midfielders_over_30.to_json(orient='records'))
 
 Q: Who is the oldest player with an assist\n
 df_assist = df[df['Ast'] > 0]\n
 df_assist = df_assist[['Player', 'Squad', 'Pos', 'Age', 'Ast', 'MP']]\n
 df_assist.sort_values(by='Age', ascending=False, inplace=True)\n
-print(df_assist.head(1).T.reset_index().values.T.tolist())
+print(df_assist.head(1).to_json(orient='records'))
 
 Q: Who is the top assister amongst these 3 teams, Brighton, Brentford, and Crystal Palace\n
 df_teams = df[(df['Squad'] == 'Brighton') | (df['Squad'] == 'Brentford') | (df['Squad'] == 'Crystal Palace')]\n
 df_teams = df_teams[['Player', 'Squad', 'Pos', 'Age', 'Ast', 'MP']]\n
 df_teams.sort_values(by='Ast', ascending=False, inplace=True)\n
-print(df_teams.head(1).T.reset_index().values.T.tolist())
+print(df_teams.head(1).to_json(orient='records'))
 
 Q: players with most goals from manchester united\n
 df_players = df[df['Squad'] == 'Manchester Utd']\n
 df_players.sort_values(by='Gls', ascending=False, inplace=True)\n
-print(df_players.head(1).T.reset_index().values.T.tolist())
+print(df_players.head(1).to_json(orient='records'))
 
 Q: '''
 openai_api_key = st.sidebar.text_input('OpenAI API Key')
@@ -142,25 +142,10 @@ finally:
     sys.stdout = old_stdout
 import pandas as pd
 
-def string_to_dataframe(data_string):
-    # Split the input string into a list of lists
-    data_list = eval(data_string)
-
-    # Extract the headers from the first list
-    headers = data_list[0]
-
-    # Extract the data from the remaining lists
-    data = data_list[1:]
-
-    # Create a Pandas DataFrame
-    df = pd.DataFrame(data, columns=headers)
-
-    return df
 
 
-df = string_to_dataframe(output)
 
 
-st.write(df)
+st.write(output)
 
 
