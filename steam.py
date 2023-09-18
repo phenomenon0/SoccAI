@@ -143,7 +143,6 @@ finally:
 import pandas as pd
 
 
-
-st.write(output)
+output
 
 
