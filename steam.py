@@ -145,7 +145,11 @@ import pandas as pd
 
 
 
-
-st.write(output)
+#function to convert json to dataframe
+def json_to_df(json_data):
+    df = pd.read_json(json_data)
+    return df
+final = json_to_df(output)
+st.write(final)
 
 
