@@ -143,5 +143,5 @@ finally:
     sys.stdout = old_stdout
 import pandas as pd
 
-st.dataframe(a.style.highlight_max(axis=0))
+st.dataframe(a)
 
