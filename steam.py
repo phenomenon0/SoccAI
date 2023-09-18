@@ -74,6 +74,8 @@ below are examples of questions, when generting the answer limit the columns to
 relatively valuable ones for the relating question.
 like number of appearances clubs age and as needed 
 
+the answer should contain not more than 5-10  relavant columns to the query
+
 
 Q: Top 5 most goals scored by a defender under 21?\n"
 df_defenders_under_21 = df[(df[`'Pos'].str.contains('DF')) & (df['Age'] < 21)]\n
@@ -140,7 +142,6 @@ except Exception as e:
 finally:
     sys.stdout = old_stdout
 import pandas as pd
-
 
 a
 
