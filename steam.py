@@ -3,8 +3,8 @@ from langchain.llms import OpenAI
 import pandas as pd
 
 st.set_page_config(
-    page_title="Hello",
-    page_icon="👋",
+    page_title="Soccer",
+    page_icon="❒",
 )
 
 st.title('⚽️ Soccer Genie')
