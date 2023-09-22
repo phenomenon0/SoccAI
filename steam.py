@@ -2,7 +2,10 @@ import streamlit as st
 from langchain.llms import OpenAI
 import pandas as pd
 
-
+st.set_page_config(
+    page_title="Hello",
+    page_icon="👋",
+)
 
 st.title('⚽️ Soccer Genie')
 st.sidebar.success("Select a module.")
