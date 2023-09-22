@@ -53,6 +53,8 @@ def plot_radar_comparison(player1_data, player2_data, params, low, high, lower_i
     radar.draw_param_labels(ax=ax, fontsize=15, fontproperties=font_managers[3].prop)
 
     return fig
+
+
 params = ["npxG", "Non-Penalty Goals", "xA", "Key Passes", "Through Balls",
           "Progressive Passes", "Shot-Creating Actions", "Goal-Creating Actions",
           "Dribbles Completed", "Pressure Regains", "Touches In Box", "Miscontrol"]
