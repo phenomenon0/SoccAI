@@ -65,6 +65,13 @@ high = [0.37, 0.6, 0.6, 4, 1.2, 10, 8, 1.3, 1.5, 5.5, 5, 5]
 bruno_values = [0.25, 0.45, 0.35, 2.5, 0.8, 6, 5, 0.9, 1.2, 4.0, 3.5, 2]
 bruyne_values = [0.32, 0.55, 0.45, 3.0, 1.0, 7, 6, 1.0, 1.4, 4.5, 4.0, 3.8]
 
+with st.form('my_form'):
+  text = st.text_area('Enter text:', 'Compare two or more players')
+  submitted = st.form_submit_button('Submit')
+  if not openai_api_key.startswith('sk-'):
+      st.warning('Please enter your OpenAI API key!', icon='⚠')
+  if submitted and openai_api_key.startswith('sk-'):
+      query  = generate_response(text.strip()+ '\n')
 
 fig = plot_radar_comparison(bruno_values, bruyne_values, params, low, high, lower_is_better=['Miscontrol'])
 st.pyplot(fig)
