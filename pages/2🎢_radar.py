@@ -1,7 +1,7 @@
 from mplsoccer import Radar, FontManager
 import matplotlib.pyplot as plt
 import streamlit as st 
-from langchain.llms import OpenAI
+
 
 def plot_radar_comparison(player1_data, player2_data, params, low, high, lower_is_better=[]):
     """
@@ -68,10 +68,7 @@ bruyne_values = [0.32, 0.55, 0.45, 3.0, 1.0, 7, 6, 1.0, 1.4, 4.5, 4.0, 3.8]
 with st.form('my_form'):
   text = st.text_area('Enter text:', 'Compare two or more players')
   submitted = st.form_submit_button('Submit')
-  if not openai_api_key.startswith('sk-'):
-      st.warning('Please enter your OpenAI API key!', icon='⚠')
-  if submitted and openai_api_key.startswith('sk-'):
-      query  = generate_response(text.strip()+ '\n')
+  
 
 fig = plot_radar_comparison(bruno_values, bruyne_values, params, low, high, lower_is_better=['Miscontrol'])
 st.pyplot(fig)
