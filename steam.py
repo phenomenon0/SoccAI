@@ -7,8 +7,8 @@ st.set_page_config(
     page_icon="👋",
 )
 
-st.title('⚽️ Soccer -Genie')
-st.sidebar.selectbox("Select a module.")
+st.title('⚽️ Soccer Genie')
+st.sidebar.success("Select a module.")
 
 df = pd.read_csv('df.csv')
 prompt ='''a dataframe with 20 columns about soccer has an example row  as such 

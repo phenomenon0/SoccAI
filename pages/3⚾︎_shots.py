@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import matplotlib.patheffects as path_effects
+import streamlit as st
 
 # We'll only use a vertical pitch for this tutorial
 from mplsoccer import VerticalPitch
