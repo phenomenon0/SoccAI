@@ -7,7 +7,7 @@ st.set_page_config(
     page_icon="👋",
 )
 
-st.title('⚽️ Soccer Genie')
+st.title('⚽️ Soccer -Genie')
 st.sidebar.selectbox("Select a module.")
 
 df = pd.read_csv('df.csv')

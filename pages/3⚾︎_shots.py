@@ -55,3 +55,4 @@ fig = plt.figure(figsize = (4,4), dpi = 100)
 ax = plt.subplot(111)
 
 soc_pitch_divisions(ax, grids = True)
+st.title('Shots')
