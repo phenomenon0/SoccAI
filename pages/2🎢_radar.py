@@ -64,15 +64,15 @@ def plot_radar_comparison(player1_data, player2_data, params, low, high, lower_i
         ('https://raw.githubusercontent.com/google/fonts/main/apache/robotoslab/RobotoSlab%5Bwght%5D.ttf',
          FontManager)
     ]
-    title1_text = axs['title'].text(0.01, 0.65, 'Bruno Fernandes', fontsize=25, color='#01c49d',
+    title1_text = ax['title'].text(0.01, 0.65, player1_data[0], fontsize=25, color='#01c49d',
                                 fontproperties=robotto_bold.prop, ha='left', va='center')
-    title2_text = axs['title'].text(0.01, 0.25, 'Manchester United', fontsize=20,
+    title2_text = ax['title'].text(0.01, 0.25, player1_data[1], fontsize=20,
                                     fontproperties=robotto_thin.prop,
                                     ha='left', va='center', color='#01c49d')
-    title3_text = axs['title'].text(0.99, 0.65, 'Kevin De Bruyne', fontsize=25,
+    title3_text = ax['title'].text(0.99, 0.65, player2_data[0], fontsize=25,
                                     fontproperties=robotto_bold.prop,
                                     ha='right', va='center', color='#d80499')
-    title4_text = axs['title'].text(0.99, 0.25, 'Manchester City', fontsize=20,
+    title4_text = ax['title'].text(0.99, 0.25, player2_data[1], fontsize=20,
                                     fontproperties=robotto_thin.prop,
                                     ha='right', va='center', color='#d80499')
 
@@ -89,7 +89,7 @@ def plot_radar_comparison(player1_data, player2_data, params, low, high, lower_i
     # Plot the radar
     fig, ax = radar.setup_axis()
     radar.draw_circles(ax=ax, facecolor='#ffb2b2', edgecolor='#fc5f5f')
-    radar_output = radar.draw_radar_compare(player1_data, player2_data, ax=ax,
+    radar_output = radar.draw_radar_compare(player1_data[2], player2_data[2], ax=ax,
                                             kwargs_radar={'facecolor': '#00f2c1', 'alpha': 0.6},
                                             kwargs_compare={'facecolor': '#d80499', 'alpha': 0.6})
     _, _, _, _ = radar_output
@@ -106,8 +106,8 @@ low =  [0.08, 0.0, 0.1, 1, 0.6,  4, 3, 0.3, 0.3, 2.0, 2, 0]
 high = [0.37, 0.6, 0.6, 4, 1.2, 10, 8, 1.3, 1.5, 5.5, 5, 5]
 
 
-bruno_values = [0.25, 0.45, 0.35, 2.5, 0.8, 6, 5, 0.9, 1.2, 4.0, 3.5, 2]
-bruyne_values = [0.32, 0.55, 0.45, 3.0, 1.0, 7, 6, 1.0, 1.4, 4.5, 4.0, 3.8]
+bruno_values = ["Bruno Fernandes","Manchester United",[0.25, 0.45, 0.35, 2.5, 0.8, 6, 5, 0.9, 1.2, 4.0, 3.5, 2]]
+bruyne_values = ["De Bruyne", "Manchester City", [0.32, 0.55, 0.45, 3.0, 1.0, 7, 6, 1.0, 1.4, 4.5, 4.0, 3.8]]
 
 with st.form('my_form'):
   text = st.text_area('Enter text:', 'Compare two or more players')
