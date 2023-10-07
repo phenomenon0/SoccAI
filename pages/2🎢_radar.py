@@ -114,6 +114,6 @@ with st.form('my_form'):
   submitted = st.form_submit_button('Submit')
   
 
-fig = plot_radar_comparison(bruno_values[3], bruyne_values[3], params, low, high, lower_is_better=['Miscontrol'])
+fig = plot_radar_comparison(bruno_values[2], bruyne_values[2], params, low, high, lower_is_better=['Miscontrol'])
 
 st.pyplot(fig)
