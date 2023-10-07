@@ -1,41 +1,8 @@
 from mplsoccer import Radar, FontManager
 import matplotlib.pyplot as plt
 import streamlit as st 
+from langchain.llms import OpenAI
 
-'''
-  "functions": [
-    {
-      "name": "plot_radar_comparison",
-      "description": "Plot a radar comparison chart of two football players using the mplsoccer package.",
-      "parameters": {
-        "player1_data": {
-          "type": "list",
-          "description": "Data values for Player 1."
-        },
-        "player2_data": {
-          "type": "list",
-          "description": "Data values for Player 2."
-        },
-        "params": {
-          "type": "list",
-          "description": "Parameter names of the statistics to show."
-        },
-        "low": {
-          "type": "list",
-          "description": "Lower boundaries for the statistics."
-        },
-        "high": {
-          "type": "list",
-          "description": "Upper boundaries for the statistics."
-        },
-        "lower_is_better": {
-          "type": "list",
-          "description": "List of parameters where lower values are better."
-        }
-      }
-    }
-  ]
-}'''
 def plot_radar_comparison(player1_data, player2_data, params, low, high, lower_is_better=[]):
     """
     Plot a radar comparison chart of two football players using the mplsoccer package.
@@ -112,7 +79,10 @@ bruyne_values = ["De Bruyne", "Manchester City", [0.32, 0.55, 0.45, 3.0, 1.0, 7,
 with st.form('my_form'):
   text = st.text_area('Enter text:', 'Compare two or more players')
   submitted = st.form_submit_button('Submit')
-  
+  if not openai_api_key.startswith('sk-'):
+      st.warning('Please enter your OpenAI API key!', icon='⚠')
+  if submitted and openai_api_key.startswith('sk-'):
+      query  = generate_response(text.strip()+ '\n')
 
 fig = plot_radar_comparison(bruno_values[2], bruyne_values[2], params, low, high, lower_is_better=['Miscontrol'])
 
