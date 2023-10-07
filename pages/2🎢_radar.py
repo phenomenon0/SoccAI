@@ -2,7 +2,40 @@ from mplsoccer import Radar, FontManager
 import matplotlib.pyplot as plt
 import streamlit as st 
 
-
+'''
+  "functions": [
+    {
+      "name": "plot_radar_comparison",
+      "description": "Plot a radar comparison chart of two football players using the mplsoccer package.",
+      "parameters": {
+        "player1_data": {
+          "type": "list",
+          "description": "Data values for Player 1."
+        },
+        "player2_data": {
+          "type": "list",
+          "description": "Data values for Player 2."
+        },
+        "params": {
+          "type": "list",
+          "description": "Parameter names of the statistics to show."
+        },
+        "low": {
+          "type": "list",
+          "description": "Lower boundaries for the statistics."
+        },
+        "high": {
+          "type": "list",
+          "description": "Upper boundaries for the statistics."
+        },
+        "lower_is_better": {
+          "type": "list",
+          "description": "List of parameters where lower values are better."
+        }
+      }
+    }
+  ]
+}'''
 def plot_radar_comparison(player1_data, player2_data, params, low, high, lower_is_better=[]):
     """
     Plot a radar comparison chart of two football players using the mplsoccer package.
@@ -64,11 +97,22 @@ high = [0.37, 0.6, 0.6, 4, 1.2, 10, 8, 1.3, 1.5, 5.5, 5, 5]
 
 bruno_values = [0.25, 0.45, 0.35, 2.5, 0.8, 6, 5, 0.9, 1.2, 4.0, 3.5, 2]
 bruyne_values = [0.32, 0.55, 0.45, 3.0, 1.0, 7, 6, 1.0, 1.4, 4.5, 4.0, 3.8]
-
+title1_text = axs['title'].text(0.01, 0.65, 'Bruno Fernandes', fontsize=25, color='#01c49d',
+                                fontproperties=robotto_bold.prop, ha='left', va='center')
+title2_text = axs['title'].text(0.01, 0.25, 'Manchester United', fontsize=20,
+                                fontproperties=robotto_thin.prop,
+                                ha='left', va='center', color='#01c49d')
+title3_text = axs['title'].text(0.99, 0.65, 'Kevin De Bruyne', fontsize=25,
+                                fontproperties=robotto_bold.prop,
+                                ha='right', va='center', color='#d80499')
+title4_text = axs['title'].text(0.99, 0.25, 'Manchester City', fontsize=20,
+                                fontproperties=robotto_thin.prop,
+                                ha='right', va='center', color='#d80499')
 with st.form('my_form'):
   text = st.text_area('Enter text:', 'Compare two or more players')
   submitted = st.form_submit_button('Submit')
   
 
-fig = plot_radar_comparison(bruno_values, bruyne_values, params, low, high, lower_is_better=['Miscontrol'])
+#fig = plot_radar_comparison(bruno_values, bruyne_values, params, low, high, lower_is_better=['Miscontrol'])
+fig = plot_radar_comparison()
 st.pyplot(fig)
