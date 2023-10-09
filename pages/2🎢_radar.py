@@ -51,17 +51,7 @@ def plot_radar_comparison(player1_data, player2_data, params, low, high, lower_i
     _, _, _, _ = radar_output
     radar.draw_range_labels(ax=ax, fontsize=15, fontproperties=font_managers[3].prop)
     radar.draw_param_labels(ax=ax, fontsize=15, fontproperties=font_managers[3].prop)
-    title1_text = ax['title'].text(0.01, 0.65, player1_data[0], fontsize=25, color='#01c49d',
-                                fontproperties=robotto_bold.prop, ha='left', va='center')
-    title2_text = ax['title'].text(0.01, 0.25, player1_data[1], fontsize=20,
-                                    fontproperties=robotto_thin.prop,
-                                    ha='left', va='center', color='#01c49d')
-    title3_text = ax['title'].text(0.99, 0.65, player2_data[0], fontsize=25,
-                                    fontproperties=robotto_bold.prop,
-                                    ha='right', va='center', color='#d80499')
-    title4_text = ax['title'].text(0.99, 0.25, player2_data[1], fontsize=20,
-                                    fontproperties=robotto_thin.prop,
-                                    ha='right', va='center', color='#d80499')
+    
 
     return fig
 
