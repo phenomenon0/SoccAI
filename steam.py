@@ -149,7 +149,7 @@ import pandas as pd
 
 st.dataframe(a)
 
-prompt_second =  """"Generate Python code to extract the following values from a list and pass them as parameters to create a radar comparison chart function:
+prompt_second =  """"extract the following values from a lists to create a radar comparison chart function:
 
     Params: A list of strings containing full English explanations of headers.
     Lows_highs: Two lists representing the 5th percentile and 95th percentile values (calculate these from the list).
