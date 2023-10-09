@@ -148,6 +148,6 @@ finally:
 import pandas as pd
 
 st.dataframe(a)
-modal = a.to_html()
 
-st.write(modal)
+
+st.write(a)
