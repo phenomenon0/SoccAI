@@ -150,4 +150,6 @@ import pandas as pd
 st.dataframe(a)
 
 
-st.write(a)
+b = pd.DataFrame(a)
+bala = b.to_html()
+st.write(bala)
