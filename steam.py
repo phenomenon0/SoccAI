@@ -149,7 +149,17 @@ import pandas as pd
 
 st.dataframe(a)
 
+prompt_second =  """"Generate Python code to extract the following values from a list and pass them as parameters to create a radar comparison chart function:
 
-b = pd.DataFrame(a)
-bala = b.to_html()
-st.write(bala)
+    Params: A list of strings containing full English explanations of headers.
+    Lows_highs: Two lists representing the 5th percentile and 95th percentile values (calculate these from the list).
+    Player 1 name and club: Two strings for the first player's name and club.
+    Player 2 name and club: Two strings for the second player's name and club.
+    Title of comparison: One string for the title of the chart.
+
+Ensure that the code properly extracts these values from the given list and then passes them as parameters when calling the radar comparison chart function.
+-- here is the list  -->"""
+#make a open ai completion that takes a prompt + b 
+promptb = prompt_second + a
+viz_params =generate_response(prompt)
+st.write(viz_params)
