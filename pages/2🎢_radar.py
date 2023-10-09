@@ -45,7 +45,7 @@ def plot_radar_comparison(player1_data, player2_data, params, low, high, lower_i
     # Plot the radar
     fig, ax = radar.setup_axis()
     radar.draw_circles(ax=ax, facecolor='#ffb2b2', edgecolor='#fc5f5f')
-    radar_output = radar.draw_radar_compare(player1_data[2], player2_data[2], ax=ax,
+    radar_output = radar.draw_radar_compare(player1_data, player2_data, ax=ax,
                                             kwargs_radar={'facecolor': '#00f2c1', 'alpha': 0.6},
                                             kwargs_compare={'facecolor': '#d80499', 'alpha': 0.6})
     _, _, _, _ = radar_output
