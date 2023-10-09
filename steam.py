@@ -160,6 +160,6 @@ prompt_second =  """"Generate Python code to extract the following values from a
 Ensure that the code properly extracts these values from the given list and then passes them as parameters when calling the radar comparison chart function.
 -- here is the list  -->"""
 #make a open ai completion that takes a prompt + b 
-promptb = prompt_second + a
+promptb = prompt_second + str(a)
 viz_params =generate_response(prompt)
 st.write(viz_params)
