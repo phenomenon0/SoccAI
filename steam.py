@@ -150,4 +150,4 @@ import pandas as pd
 st.dataframe(a)
 modal = a.to_string()
 
-modal
+st.write(modal)
