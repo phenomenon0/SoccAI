@@ -67,7 +67,7 @@ nest-asyncio==1.5.7
 notebook_shim==0.2.3
 numexpr==2.8.5
 numpy==1.25.2
-openai==0.28.0
+openai
 outcome==1.2.0
 overrides==7.4.0
 packaging==23.1
