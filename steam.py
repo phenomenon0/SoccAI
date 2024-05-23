@@ -1,5 +1,6 @@
 import streamlit as st
-from langchain.llms import OpenAI
+
+from openai import openAI 
 import pandas as pd
 
 st.set_page_config(
